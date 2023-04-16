@@ -7,6 +7,7 @@ public class ComputerMovement : MonoBehaviour
 {
     public float MovementAcceleration = 0.0f;
     public float MouseSensitivity = 0.0f;
+    public float TopSpeed = 0.0f;
     public Transform PlayerCamera = null;
 
     private Rigidbody rb;
@@ -34,7 +35,29 @@ public class ComputerMovement : MonoBehaviour
     {
         UpdateMouseLook();
         Vector3 movement = transform.right * movementX + transform.forward * movementZ + transform.up * movementY;
-        rb.AddForce(movement * MovementAcceleration);
+        Vector3 movementForward = transform.forward * movementZ;
+        Vector3 movementRight = transform.right * movementX;
+        Vector3 movementUp = transform.up * movementY;
+
+        float xVel = transform.InverseTransformDirection(rb.velocity).x;
+        float yVel = transform.InverseTransformDirection(rb.velocity).y;
+        float zVel = transform.InverseTransformDirection(rb.velocity).z;
+
+        if (xVel < TopSpeed && movementX > 0) {
+            rb.AddForce(movementRight * MovementAcceleration);
+        } else if (xVel > (-1 * TopSpeed) && movementX < 0) {
+            rb.AddForce(movementRight * MovementAcceleration);
+        }
+        if (zVel < TopSpeed && movementZ > 0) {
+            rb.AddForce(movementForward * MovementAcceleration);
+        } else if (zVel > (-1 * TopSpeed) && movementZ < 0){
+            rb.AddForce(movementForward * MovementAcceleration);
+        }
+        if (yVel < TopSpeed && movementY > 0) {
+            rb.AddForce(movementUp * MovementAcceleration);
+        } else if (yVel > (-1 * TopSpeed) && movementY < 0){
+            rb.AddForce(movementUp * MovementAcceleration);
+        }
     }
 
     void UpdateMouseLook()

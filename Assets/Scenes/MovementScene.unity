@@ -525,6 +525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementAcceleration: 2
   MouseSensitivity: 2
+  TopSpeed: 5
   PlayerCamera: {fileID: 102118821}
 --- !u!1 &654836207
 GameObject:
