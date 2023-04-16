@@ -5,14 +5,15 @@ using UnityEngine.InputSystem;
 
 public class ComputerMovement : MonoBehaviour
 {
-    public float MovementAcceleration = 0;
-    public float MouseSensitivity = 0;
+    public float MovementAcceleration = 0.0f;
+    public float MouseSensitivity = 0.0f;
     public Transform PlayerCamera = null;
 
     private Rigidbody rb;
     private float movementX;
     private float movementY;
     private float movementZ;
+    private float cameraPitch = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,10 @@ public class ComputerMovement : MonoBehaviour
     void UpdateMouseLook()
     {
         Vector2 MouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-
         transform.Rotate(Vector3.up * MouseDelta.x * MouseSensitivity);
+
+        cameraPitch -= MouseDelta.y * MouseSensitivity;
+        cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
+        PlayerCamera.localEulerAngles = Vector3.right * cameraPitch;
     }
 }
