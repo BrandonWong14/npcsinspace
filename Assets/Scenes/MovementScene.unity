@@ -629,7 +629,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 84593659}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 894302572}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -2175,7 +2175,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1730089339}
   - component: {fileID: 1730089338}
-  - component: {fileID: 1730089337}
   - component: {fileID: 1730089336}
   - component: {fileID: 1730089335}
   - component: {fileID: 1730089340}
@@ -2183,6 +2182,7 @@ GameObject:
   - component: {fileID: 1730089333}
   - component: {fileID: 1730089332}
   - component: {fileID: 1730089331}
+  - component: {fileID: 1730089337}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -2323,7 +2323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ActionAssets: []
+  m_ActionAssets:
+  - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1730089338
 MonoBehaviour:
   m_ObjectHideFlags: 0
