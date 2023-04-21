@@ -2175,6 +2175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1730089339}
   - component: {fileID: 1730089338}
+  - component: {fileID: 1730089337}
   - component: {fileID: 1730089336}
   - component: {fileID: 1730089335}
   - component: {fileID: 1730089340}
@@ -2182,7 +2183,6 @@ GameObject:
   - component: {fileID: 1730089333}
   - component: {fileID: 1730089332}
   - component: {fileID: 1730089331}
-  - component: {fileID: 1730089337}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
