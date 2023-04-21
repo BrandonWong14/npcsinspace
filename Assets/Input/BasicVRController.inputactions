@@ -1,0 +1,34 @@
+{
+    "name": "BasicVRController",
+    "maps": [
+        {
+            "name": "VRControls",
+            "id": "cda7aab9-4a64-4136-9dd5-313210abaf7a",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "1aa33801-d904-4cb0-8366-302ddcc8cb16",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "01f04145-b115-4425-b5b6-75e584cddb71",
+                    "path": "<OculusTouchController>{RightHand}/thumbstick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
