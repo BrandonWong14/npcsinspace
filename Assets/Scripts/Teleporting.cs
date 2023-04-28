@@ -1,6 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Grappling : MonoBehaviour
+public class Teleporting : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -64,38 +66,17 @@ public class Grappling : MonoBehaviour
         // UpdateMouseLook();
         //cam = Camera.current;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Input.GetButtonDown("Fire1") && Physics.Raycast(ray, out grapplePoint))
+        if (Input.GetButtonDown("Fire2") && Physics.Raycast(ray, out grapplePoint))
         {
             isGrappling = true;
-            Vector3 grappleDirection = (grapplePoint.point - transform.position);
-            rb.velocity = grappleDirection.normalized * grappleSpeed;
+            transform.position = grapplePoint.point;
+            print(grapplePoint.point);
+
         }
-        if (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire2"))
         {
             isGrappling = false;
             rb.velocity = new Vector3(0, 0, 0);
-        }
-        if (isGrappling)
-        {
-            transform.LookAt(grapplePoint.point);
-            Vector3 grappleDirection = (grapplePoint.point - transform.position);
-
-            if (distance < grappleDirection.magnitude)
-            {
-                float velocity = rb.velocity.magnitude;
-                Vector3 newDirection = Vector3.ProjectOnPlane(rb.velocity, grappleDirection);
-                rb.velocity = newDirection.normalized * velocity;
-
-            } else
-            {
-                rb.AddForce(grappleDirection.normalized * grappleSpeed);
-
-            }
-            distance = grappleDirection.magnitude;
-
-        } else
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
         }
     }
 }
