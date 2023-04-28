@@ -1,32 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ActualPropulsion : MonoBehaviour
 {
     public float MovementAcceleration = 0.0f;
-    public float MouseSensitivity = 0.0f;
     public float TopSpeed = 0.0f;
-    public Transform PlayerCamera = null;
-    public GameObject LeftController = null;
-    public GameObject RightController = null;
+    public Transform LeftTransform = null;
+    public Transform RightTransform = null;
 
     private Rigidbody rb;
-    private float movementX;
-    private float movementY;
-    private float movementZ;
-    private float cameraPitch = 0.0f;
+    private Vector3 leftdirection;
 
     // Start is called before the first frame update
     void Start()
     {
-        LeftTransform = LeftController.GetComponent<Transform>();
-        RightTransform = RightController.GetComponent<Transform>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void OnVRLeftPrimaryButton() {
+        rb.AddForce((LeftTransform.forward * MovementAcceleration));
+    }
+
+    void OnVRRightPrimaryButton() {
+        rb.AddForce((RightTransform.forward * MovementAcceleration));
     }
 }

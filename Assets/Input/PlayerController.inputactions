@@ -13,6 +13,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "VRLeftPrimaryButton",
+                    "type": "Button",
+                    "id": "fb08e440-53cf-47a9-b496-70a621fb5e20",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VRRightPrimaryButton",
+                    "type": "Button",
+                    "id": "e2de0a95-da78-4936-86de-91c3b29c18f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -92,6 +110,28 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "29ab4069-99c8-4c82-8dc7-bab7314d55a1",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VRLeftPrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c87fc96-adc4-4980-9cac-1121ee38bf80",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VRRightPrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -28,6 +28,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Buttons",
+            "id": "fe10133c-0d2e-47ed-aa21-76e68248ce8a",
+            "actions": [
+                {
+                    "name": "LeftPrimary",
+                    "type": "Button",
+                    "id": "f1fa788e-8a68-4edb-8c9d-d1e27594709b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "09a9288f-6e5e-478b-b92e-5698c196804f",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPrimary",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
