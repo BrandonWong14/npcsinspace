@@ -33,7 +33,7 @@ public class ComputerMovement : MonoBehaviour
 
     void Update()
     {
-        UpdateMouseLook();
+        //UpdateMouseLook();
         Vector3 movement = transform.right * movementX + transform.forward * movementZ + transform.up * movementY;
         Vector3 movementForward = transform.forward * movementZ;
         Vector3 movementRight = transform.right * movementX;
@@ -59,7 +59,7 @@ public class ComputerMovement : MonoBehaviour
             rb.AddForce(movementUp * MovementAcceleration);
         }
     }
-
+    /*
     void UpdateMouseLook()
     {
         Vector2 MouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
@@ -69,4 +69,5 @@ public class ComputerMovement : MonoBehaviour
         cameraPitch = Mathf.Clamp(cameraPitch, -90.0f, 90.0f);
         PlayerCamera.localEulerAngles = Vector3.right * cameraPitch;
     }
+    */
 }
