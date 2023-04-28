@@ -95,7 +95,8 @@ public class Grappling : MonoBehaviour
 
         } else
         {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
+            //transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
+            rb.velocity = new Vector3(0, 0, 0);
         }
     }
 }
