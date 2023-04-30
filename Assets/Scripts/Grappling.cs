@@ -23,11 +23,11 @@ public class Grappling : MonoBehaviour
     public float distance = 1000.0f;
 
     public float grappleSpeed = 5f;
-    public float MovementAcceleration = 0.0f;
-    public float MouseSensitivity = 0.0f;
-    public float TopSpeed = 0.0f;
-    public Transform PlayerCamera = null;
-    private float cameraPitch = 0.0f;
+    //public float MovementAcceleration = 0.0f;
+    //public float MouseSensitivity = 0.0f;
+    //public float TopSpeed = 0.0f;
+    //public Transform PlayerCamera = null;
+    //private float cameraPitch = 0.0f;
 
     void Start()
     {
@@ -68,7 +68,7 @@ public class Grappling : MonoBehaviour
         // UpdateMouseLook();
         //cam = Camera.current;
         // Input.mousePosition
-        Ray ray = cam.ScreenPointToRay(cam2.forward);
+        
         //List<InputDevice> m_device = new List<InputDevice>();
         //bool primaryButtonDown = false;
         //InputDevices.GetDeiveWithCharacteristics(InputDeviceCharacteristics.left, m_device);
@@ -81,6 +81,7 @@ public class Grappling : MonoBehaviour
         //hookReference
         //ray
         // cam2.position, cam2.forward,
+        Ray ray = cam.ScreenPointToRay(cam2.forward);
         if ((hookReference.action.ReadValue<float>() != 0) && Physics.Raycast(ray, out grapplePoint)) 
         {
             Vector3 hookDirection = (grapplePoint.point - transform.position);
