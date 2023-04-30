@@ -22,11 +22,17 @@ using Meta.WitAi;
 using Meta.WitAi.Json;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using OpenAI;
 
 namespace Oculus.Voice.Demo
 {
     public class InteractionHandler : MonoBehaviour
     {
+        
+        ChatGPT c;
+
         [Header("Default States"), Multiline]
         [SerializeField] private string freshStateText = "Testing hahaha";
 
@@ -38,8 +44,14 @@ namespace Oculus.Voice.Demo
         [SerializeField] private AppVoiceExperience appVoiceExperience;
 
         // Whether voice is activated
+        //public GameObject chatGPTGO;
+
         public bool IsActive => _active;
         private bool _active = false;
+        
+        void Start() {
+            c=GetComponent<ChatGPT>();
+        }
 
         // Add delegates
         private void OnEnable()
@@ -109,6 +121,7 @@ namespace Oculus.Voice.Demo
                 if (!string.IsNullOrEmpty(response["text"]))
                 {
                     textArea.text = "I heard: " + response["text"];
+                    c.SendReply(response["text"]);
                 }
                 else
                 {

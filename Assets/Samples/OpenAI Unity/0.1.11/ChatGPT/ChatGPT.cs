@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Oculus.Voice.Demo;
 
 namespace OpenAI
 {
@@ -21,7 +22,7 @@ namespace OpenAI
 
         private void Start()
         {
-            button.onClick.AddListener(SendReply);
+            //SendReply("Hello There");
         }
 
         private void AppendMessage(ChatMessage message)
@@ -37,12 +38,12 @@ namespace OpenAI
             scroll.verticalNormalizedPosition = 0;
         }
 
-        private async void SendReply()
+        public async void SendReply(string inp)
         {
             var newMessage = new ChatMessage()
             {
                 Role = "user",
-                Content = inputField.text
+                Content = inp
             };
             
             AppendMessage(newMessage);
@@ -59,7 +60,8 @@ namespace OpenAI
             var completionResponse = await openai.CreateChatCompletion(new CreateChatCompletionRequest()
             {
                 Model = "gpt-3.5-turbo-0301",
-                Messages = messages
+                Messages = messages,
+                MaxTokens = 16
             });
 
             if (completionResponse.Choices != null && completionResponse.Choices.Count > 0)
